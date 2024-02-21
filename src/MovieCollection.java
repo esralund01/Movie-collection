@@ -1,17 +1,19 @@
+import java.util.ArrayList;
+//ALT DER ER UDKOMMENTERET ER FRA USER STORY 1 OPGAVE.
 public class MovieCollection {
-private Movie [] filmsamling;
-int count = 0;
-
-
+private ArrayList<Movie> collection;
+//int count = 0;
 public MovieCollection() {
-    this.filmsamling = new Movie[5];
+    collection = new ArrayList<Movie>(); //kalder alle parametre fra movie.java classen
+//    filmsamling = new Movie[5];
 }
 
-public void tilføjMovie(String title, String director, int yearCreated, boolean isInColor, int lenghtInMinutes, String genre) {
-    filmsamling [count++] = new Movie(title, director, yearCreated, isInColor, lenghtInMinutes, genre);
+public void tilføjFilm(String title, String director, int yearCreated, boolean isInColor, int lenghtInMinutes, String genre) {
+    collection.add(new Movie(title, director, yearCreated, isInColor, lenghtInMinutes, genre));
     }
-    public Movie[] getFilmsamling(){
-    return filmsamling;
-    }
-}
+//    public Movie[] getFilmsamling(){
+//    return filmsamling;
+//    }
 
+
+}
