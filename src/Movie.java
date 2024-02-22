@@ -7,7 +7,7 @@ public class Movie {
     private int lengthInMinutes;
     private String genre;
 
-    //parametre
+    //constructotr med parametre
     public Movie(String title, String director, int yearCreated, boolean isInColor, int lengthInMinutes, String genre) {
         this.title = title;
         this.director = director;
@@ -39,5 +39,19 @@ public class Movie {
 
     public String getGenre() {
         return genre;
+    }
+
+   //override metode bruges til boolean om "is in color"
+    @Override
+    public String toString(){
+       String  result = "";
+        result += "Titel: " + title + "\n" + "Længde: " + lengthInMinutes + " minutter" +
+                "\n" + "Director: " + director + "\n" + "Genre: "+ genre + "\n";
+        if(isInColor){
+            result += "is in color";
+        } else {
+            result += "is not in color";
+        }
+        return result;
     }
 }
