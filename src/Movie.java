@@ -41,16 +41,17 @@ public class Movie {
         return genre;
     }
 
-   //override metode bruges til boolean om "is in color"
+   //returnerer et film-objekt som en streng
+    //\n betyder at det skal printes på en ny linje
     @Override
     public String toString(){
        String  result = "";
-        result += "Titel: " + title + "\n" + "Længde: " + lengthInMinutes + " minutter" +
-                "\n" + "Director: " + director + "\n" + "Genre: "+ genre + "\n";
+        result += "Titel: " + title + "\n" + "Længde: " + lengthInMinutes + " Minutter: " +
+                "\n" + "Director: " + director + "\n" + "Genre: "+ genre + "\n" + "Farvefilm: ";
         if(isInColor){
-            result += "is in color";
+            result += "Yes";
         } else {
-            result += "is not in color";
+            result += "No";
         }
         return result;
     }

@@ -41,20 +41,19 @@ public class Main {
 
 //USER STORY 2+3:
 
-        int tilføjFilm = 0;
+        int userInput = 0;
         final int SENTINEL = 2;
         String title; //added string title så den overwriter andre title-værdier og kan søge i searchmovie
-
-        while (!(tilføjFilm == SENTINEL)) {
-            System.out.println("Velkommen til min filmsamling. Du har nu 4 muligheder:");
+        System.out.println("Velkommen til min filmsamling. Du har nu 4 muligheder:");
+        while (!(userInput == SENTINEL)) {
             System.out.println("Tryk 1 for 'Opret en film'");
             System.out.println("Tryk 2 for 'Afslut'");
             System.out.println("Tryk 3 for 'Vis filmliste'");
             System.out.println("Tryk 4 for 'Search for movie'");
-            tilføjFilm = input.nextInt();
+            userInput = input.nextInt();
             input.nextLine(); // flere af de her er blevet tilføjet for at kunne få den til at printe titlen ud ved "" er blevet tilføjet til listen"
 
-            if (tilføjFilm == 1) {
+            if (userInput == 1) {
                 //tilføj film
                 System.out.println("Enter movie title and press Enter");
                 title = input.nextLine();
@@ -70,7 +69,7 @@ public class Main {
                 boolean isInColor = false;
                 System.out.println("Is the movie in color? Write yes/no");
                 String erIFarve = input.next();
-                erIFarve = erIFarve.toLowerCase();
+                erIFarve = erIFarve.toLowerCase(); //uanset hvad og hvordan man inputter, bliver det ouputtet til lower case
                 if (erIFarve.equals("yes")) {
                     isInColor = true;
                 }
@@ -84,30 +83,20 @@ public class Main {
                 String genre = input.nextLine();
 
                 myFirstCollection.addMovie(title, director, yearCreated, isInColor, lengthInMinutes, genre);
-                //  movieList.get(0)
-                // Movie[] movieList = firstCollection.getmovieCollection();
-                //System.out.println(title + " er blevet tilføjet til listen.");
 
             }
-            if (tilføjFilm == 3) { //user story 4 - lav liste
+            if (userInput == 2) {
+                System.out.println("THE END");
+            }
+            if (userInput == 3) { //user story 4 - lav liste
                 myFirstCollection.filmList();
             }
-            if (tilføjFilm == 4) { //user story 5 - søg
+            if (userInput == 4) { //user story 5 - søg
                 System.out.println("Search for movie title: ");
                 title = input.nextLine();
-               // input.nextLine();
                 myFirstCollection.searchMovie(title);
-                /*if (title!= collection.searchMovie(title))
-                    System.out.println("No movie found");
 
-                 */
-            } else {
-                System.out.println("The program has ended.");
             }
-            /* ikke længere brug for dette, da vi istedet bare lave en "else"
-            if(tilføjFilm==2){
-                System.out.println("THE END");
-             */
+            }
         }
     }
-}

@@ -15,26 +15,12 @@ public class Controller { //controller constructor. opretter hvad en vi putter i
 
     //user story 4 create list of all movies
     public void filmList() { //så den kan hentes over i main
-        //for (Movie movie : collection.seFilmListe() {
-        //  System.out.println(movie.toString());
         myFirstCollection.filmList();
     }
 
     public void searchMovie(String title) {
         myFirstCollection.searchMovie(title);
     }
+
 }
-
-
-        /* public boolean searchMovie(String title) { //string title fordi vi vil søge efter titlens navn = string
-       for (Movie movie : collection.collection){
-            if (title.toLowerCase().equals(movie.getTitle()))
-            System.out.println("Movie found" + movie.getTitle());
-            return true;
-        } System.out.println("No movie found");
-        return false;
-       // collection.searchMovie(title);
-
-    */
-
 
