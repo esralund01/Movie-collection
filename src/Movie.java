@@ -40,6 +40,21 @@ public class Movie {
     public String getGenre() {
         return genre;
     }
+    public void setTitle(String title) {
+        this.title = title;
+    }
+    public void setDirector(String director){
+        this.director = director;
+    }
+    public void setYearCreated(int yearCreated){
+        this.yearCreated = yearCreated;
+    }
+    public void setLengthInMinutes (int lengthInMinutes){
+        this.lengthInMinutes = yearCreated;
+    }
+    public void setGenre (String genre){
+        this.genre = genre;
+    }
 
    //returnerer et film-objekt som en streng
     //\n betyder at det skal printes på en ny linje

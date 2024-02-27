@@ -2,7 +2,7 @@ import java.util.ArrayList;
 public class Controller { //controller constructor. opretter hvad en vi putter ind i den. så moviecollection.
     //controlleren uddelelere videre til moviecollection. den er mellemmand mellem main og resten
 
-    private MovieCollection myFirstCollection;
+    MovieCollection myFirstCollection;
 
     public Controller() {
         myFirstCollection = new MovieCollection();
@@ -21,6 +21,12 @@ public class Controller { //controller constructor. opretter hvad en vi putter i
     public void searchMovie(String title) {
         myFirstCollection.searchMovie(title);
     }
+    /*user story 8
+    public void editMovie (String title, String director, int yearCreated, int lengthInMinutes, String genre){
+        myFirstCollection.editMovie(title);
+    }
+
+     */
 
 }
 
