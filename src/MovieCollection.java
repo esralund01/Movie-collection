@@ -20,19 +20,20 @@ public class MovieCollection {
     // user story 5 + 6 - lav search option
     public void searchMovie(String title) { //ny metode
         System.out.println("Følgende film passer til din søgning:");
+        boolean found = false;
         for (Movie searchingMovie : films) {
             if (searchingMovie.getTitle().toLowerCase().contains(title.toLowerCase())) {
                 System.out.println(searchingMovie.toString()); //printer kun titlen på de film der passer.
-
-            } else if (films.isEmpty()) { //tilføjet så sout kun printes hvis filmen ikke er der, og ikke ved hver itieration
-                System.out.println("\nIngen film i din liste matchede din søgning.");
+                found = true;}
             }
+        if (!found) { //tilføjet så sout kun printes hvis filmen ikke er der, og ikke ved hver itieration
+            System.out.println("\nIngen film i din liste matchede din søgning.");
         }
 
     }
 }
 
-    /*USER STORY 8 - EDIT OPTION - brug set.
+   /* USER STORY 8 - EDIT OPTION - brug set.
     public void editMovie(String title) {
         Scanner scanner = new Scanner(System.in);
         int editOption = 0;
@@ -83,7 +84,7 @@ public class MovieCollection {
                 }
 
             }
-            */
+
 
 /*
         for (Movie editMovie : films) {
