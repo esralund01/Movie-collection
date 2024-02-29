@@ -32,8 +32,8 @@ public class MovieCollection {
     }
     //User story #8 - edit option
     public String editMovie(int index, int attribute, String str) { //index, att, str = de variabler vi vil ændre
-        Movie movie = films.get(index);
-        if (attribute == 1) {
+        Movie movie = films.get(index); //henter index værdierne fra arraylisten films
+        if (attribute == 1) { //assigner en opgave til hver attribut
             movie.setTitle(str);
         } else if (attribute ==2){
             movie.setDirector(str);
@@ -46,9 +46,13 @@ public class MovieCollection {
         } else if(attribute==5){
              movie.setGenre(str);
         }
-        return movie.toString(); //returner det som string
+        return movie.toString(); //returner det hele tilbage som string
     }
 //lav deletemovie metode - USER STORY 11
+
+    public void deleteMovie(int index){
+        films.remove(index);
+    }
     }
 
 

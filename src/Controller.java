@@ -31,11 +31,16 @@ public class Controller {//controller constructor. opretter hvad en vi putter in
             myFirstCollection.searchMovies(title);
         }
     }
-     // user story 8 -edit option
+     //edit option
     public void editMovie (int index, int attribute, String newValue){
         String editedMovie= myFirstCollection.editMovie(index, attribute, newValue);
         System.out.println("Film redigeret.");
         System.out.println(editedMovie);
+    }
+    public void deleteMovie (int index){ //definer hvad der skal ændres i = index
+      myFirstCollection.deleteMovie(index);
+        System.out.println("Filmen er blevet slettet." +  "\n" + "Din liste ser nu således ud:");
+
     }
 
     }
