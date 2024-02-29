@@ -1,4 +1,3 @@
-import java.util.Scanner;
 import java.util.ArrayList;
 public class MovieCollection {
     ArrayList<Movie> films = new ArrayList<>();
@@ -10,30 +9,41 @@ public class MovieCollection {
         System.out.println(movie.toString());
     }
 
-    //user story 4 - lav liste
+    //lav liste
     public void filmList() {
         for (Movie moviePrintOut : films) {
             System.out.println(moviePrintOut.toString());
         }
     }
 
-    // user story 5 + 6 - lav search option
-    public void searchMovie(String title) { //ny metode
-        System.out.println("Følgende film passer til din søgning:");
-        boolean found = false;
-        for (Movie searchingMovie : films) {
-            if (searchingMovie.getTitle().toLowerCase().contains(title.toLowerCase())) {
-                System.out.println(searchingMovie.toString()); //printer kun titlen på de film der passer.
-                found = true;}
+    //lav search option
+    //lav arraylist til evt match
+    //lav loop der kører igennem vores collection
+    // inde i loopet tjekker vi om filmens titel matcher metodens input
+    //if der er et match tilføjer vi til den lokale arraylist
+    //returner arraylist til sidst
+        public ArrayList<Movie> searchMovies(String title) {//LAV OM FRA STRING TIL ARRAYLISTE
+        ArrayList<Movie> searchMatchList = new ArrayList<>();
+           // System.out.println("Følgende film passer til din søgning:");
+            for (Movie movie : films) {
+                if (movie.getTitle().toLowerCase().contains(title.toLowerCase())) { //matching checket
+                    searchMatchList.add(movie);
+                }
             }
-        if (!found) { //tilføjet så sout kun printes hvis filmen ikke er der, og ikke ved hver itieration
-            System.out.println("\nIngen film i din liste matchede din søgning.");
+            return searchMatchList;
         }
-
     }
-}
 
-   /* USER STORY 8 - EDIT OPTION - brug set.
+//lav deletemovie metode - USER STORY 11
+
+//lav arrayliste til edit
+//først kalder vi search så vi får en arraylist
+//spørg brugeren om hvilket nummer match man vil redigere
+//man kalder get på arraylisten fra search (husk at trække 1 fra (-1))
+//nu har vi movie objektet
+//promopt brugeren for hvad der skal ændres (som i velkomstmenuen)
+
+   /* USER STORY 8 - EDIT OPTION - brug set. //lav om til arrayliste(?)
     public void editMovie(String title) {
         Scanner scanner = new Scanner(System.in);
         int editOption = 0;
@@ -86,7 +96,7 @@ public class MovieCollection {
             }
 
 
-/*
+
         for (Movie editMovie : films) {
             System.out.println("Hvad vil du ændre? ");
             if (editOption == 1) {
