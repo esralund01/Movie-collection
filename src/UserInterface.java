@@ -23,7 +23,7 @@ public class UserInterface {
             System.out.println("Tryk 4 for 'Search for movie'");
 
             //USER STORY 8 - NY EDIT METHOD
-            //System.out.println("Tryk 5 for 'Edit movie'");
+            System.out.println("Tryk 5 for 'Edit movie'");
 
             userInput = input.nextInt();
             input.nextLine(); // flere af de her er blevet tilføjet for at kunne få den til at printe titlen ud ved "" er blevet tilføjet til listen"
@@ -48,11 +48,12 @@ public class UserInterface {
             }
 
             //USER STORY 8 - EDIT OPTION
-            /*if(userInput == 5){
-                System.out.println(("Enter movie title to edit"));
-                title = input.nextLine();
-                myFirstCollection.editMovie(title);
-             */
+            if(userInput == 5) {
+                //System.out.println(("Enter movie title to edit"));
+                editMovieMethod();
+            }
+
+
         }
         userInput = input.nextInt(); //tilføjet ellers printer den ikke korrekt ud
         input.nextLine(); // flere af de her er blevet tilføjet for at kunne få den til at printe titlen ud ved "" er blevet tilføjet til listen"
@@ -95,7 +96,32 @@ public class UserInterface {
         System.out.println("\nFilm er tilføjet.");
 
     }
-}
+    //opret ny metode til at redigere film
+    public void editMovieMethod(){
+        Scanner input = new Scanner(System.in);
+
+        System.out.println("Indtast indeksnummer på film du vil ændre");
+        int index = input.nextInt();
+        input.nextLine();
+
+
+        System.out.println("Vælg hvad du vil ændre:");
+        System.out.println("1. Titel");
+        System.out.println("2. Instruktør");
+        System.out.println("3. År for oprettelse");
+        //System.out.println("4. Er i farve (yes/no)");
+        System.out.println("4. Længde i minutter");
+        System.out.println("5. Genre");
+        int attribute = input.nextInt();
+        input.nextLine(); // Clearing the buffer
+
+        System.out.println("Indtast den nye værdi:");
+        String newValue = input.nextLine();
+
+        myFirstCollection.editMovie(index, attribute, newValue);
+    }
+
+    }
 
 
 

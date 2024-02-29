@@ -16,8 +16,6 @@ public class Controller {//controller constructor. opretter hvad en vi putter in
 
     //user story 4 create list of all movies
     public void filmList() { //så den kan hentes over i main
-        //for (Movie movie : collection.seFilmListe() {
-        //  System.out.println(movie.toString());
         myFirstCollection.filmList();
     }
 
@@ -33,11 +31,15 @@ public class Controller {//controller constructor. opretter hvad en vi putter in
             myFirstCollection.searchMovies(title);
         }
     }
-}
- /*user story 8
-    public void editMovie (String title, String director, int yearCreated, int lengthInMinutes, String genre){
-        myFirstCollection.editMovie(title);
+     // user story 8 -edit option
+    public void editMovie (int index, int attribute, String newValue){
+        String editedMovie= myFirstCollection.editMovie(index, attribute, newValue);
+        System.out.println("Film redigeret.");
+        System.out.println(editedMovie);
     }
 
-     */
+    }
+
+
+
 

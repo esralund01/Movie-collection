@@ -49,6 +49,10 @@ public class Movie {
     public void setYearCreated(int yearCreated){
         this.yearCreated = yearCreated;
     }
+    public void setIsInColor(boolean isInColor) {
+        this.isInColor = isInColor;
+    }
+
     public void setLengthInMinutes (int lengthInMinutes){
         this.lengthInMinutes = yearCreated;
     }
@@ -61,8 +65,9 @@ public class Movie {
     @Override
     public String toString(){
        String  result = "";
-        result += "Titel: " + title + "\n" + "Længde: " + lengthInMinutes + " Minutter: " +
-                "\n" + "Director: " + director + "\n" + "Genre: "+ genre + "\n" + "Farvefilm: ";
+        result += "Titel: " + title + "\n" + "Director: " + director + "\n" + "Year Created: " + yearCreated + "\n" +
+        "Længde: " + lengthInMinutes + " Minutter " +
+                 "\n" + "Genre: "+ genre + "\n" + "Farvefilm: ";
         if(isInColor){
             result += "Yes";
         } else {
